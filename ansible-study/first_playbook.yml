@@ -1,0 +1,8 @@
+- name: My first Ansible play
+  hosts: local
+  tasks:
+    - name: Ensure a directory exists
+      file:
+        path: ~/ansible_test_dir
+        state: directory
+

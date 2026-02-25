@@ -1,0 +1,22 @@
+- name: Install and Start Nginx
+  hosts: local
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx package
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+    - name: Copy my custom index.html
+      copy:
+        src: my_index.html
+        dest: /var/www/html/index.nginx-debian.html
+
