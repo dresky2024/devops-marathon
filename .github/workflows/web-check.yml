@@ -19,3 +19,8 @@ jobs:
       run: |
         docker run --rm my-web-check ls /usr/share/nginx/html/index.html
         echo "Файл index.html на месте, тест пройден!"
+
+    - name: Final Test - Check page content
+      run: |
+        docker run --rm my-web-check cat /usr/share/nginx/html/index.html
+	
