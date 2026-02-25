@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # 2. Добавляем bash (в Alpine его нет по умолчанию)
-RUN error_command_here
+RUN apk add --no-cache bash
 
 # 3. Указываем рабочую папку внутри контейнера
 WORKDIR /app
